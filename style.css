@@ -1,0 +1,57 @@
+#title {
+	text-align: center;
+	font-family: tahoma;
+}
+.board {
+	width: 320px;
+	height: 320px;
+	margin-top: 100px;
+	margin-left: 250px;
+	background-color: black;
+}
+
+.box {
+	height: 100px;
+	width: 100px;
+	padding: 1px;
+	border: 1px;
+	margin: 1px;
+	display: inline-block;
+
+	background-color: blanchedalmond;
+}
+
+
+.m {
+	border-top: 1px;
+	border-bottom: 1px
+}
+
+#start {
+	position: relative;
+	left: 250px;
+	top: 90px;
+}
+
+#player-one {
+	position: relative;;
+	left: 480px;
+	bottom: 438px;
+	font-family: tahoma;
+}
+
+#player-two {
+	position: relative;
+	left: 675px;
+	bottom: 485px;
+	font-family: tahoma;
+}
+
+
+
+
+
+
+
+
+
