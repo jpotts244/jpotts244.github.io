@@ -40,15 +40,38 @@ var startGame = function startGame () {
 var playerMove = function playerMove (){ 
 	var count = 0;
 	$('.box').click(function(){
-		count++;
+	
 		if (count > 9) {
-		alert('Game Over');
-	}   else if (count % 2 === 0) {
-		$(this).children('.oimage').show();
-	}	else if (count % 2 !== 0){
-		$(this).children('.ximage').show();	
-	}	
+			alert('Game Over');
 
-});
+		}   else if ($(this).children('.ximage').is(':visible') || $(this).children('.oimage').is(':visible')) {
+				return true;
+		
+		}	else if (count % 2 === 0) {
+			$(this).children('.oimage').show();
+			count++;
+				
+		}	else if (count % 2 !== 0){
+			$(this).children('.ximage').show();
+			count++;
+				
+		}	
+
+	});
 }
+
+var winners = [[0,1,2], [3,4,5], [6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+
+
+var boxArray = [];
+var boxDivs = $('.box');
+
+for(var i = 0; i < boxDivs.length; i++){
+	console.log(boxDivs[i]);
+	var boardDivs = boxDivs[i];
+	var superBoardDivs = $(boardDivs);
+	boxArray.push(superBoardDivs);
+	console.log(i);
+}
+
 
