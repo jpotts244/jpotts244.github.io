@@ -5,37 +5,98 @@
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 <!-- 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+
 </head>
 <body>
 	<h1 id="title">Let's Play Tic-Tac-Toe!</h1>
 
-	<button id="start">Start Game</button>
+	<button id="start">Restart Game</button>
 	<div class="board">
 		<div class="row">
-			<div class="box"></div>
-    		<div class="box m"></div>
-  			<div class="box"></div>
+			<div class="box" id="1">
+				<img class="ximage" src="images/ximage.png">
+				<img class="oimage" src="images/oimage.png">
+			</div>
+    		<div class="box m" id="2">
+    			<img class="ximage" src="images/ximage.png">
+    			<img class="oimage" src="images/oimage.png">
+    		</div>
+  			<div class="box" id="3">
+  				<img class="ximage" src="images/ximage.png">
+  				<img class="oimage" src="images/oimage.png">
+  			</div>
   		<div class="row">
-			<div class="box"></div>
-			<div class="box m"></div>
-			<div class="box"></div>
+			<div class="box" id="4">
+				<img class="ximage" src="images/ximage.png">
+				<img class="oimage" src="images/oimage.png">
+			</div>
+			<div class="box m" id="5">
+				<img class="ximage" src="images/ximage.png">
+				<img class="oimage" src="images/oimage.png">
+			</div>
+			<div class="box" id="6">
+				<img class="ximage" src="images/ximage.png">
+				<img class="oimage" src="images/oimage.png">
+			</div>
 		</div>
 		<div class="row">
-			<div class="box"></div>
-			<div class="box m"></div>
-			<div class="box"></div> 
+			<div class="box" id="7">
+				<img class="ximage" src="images/ximage.png">
+				<img class="oimage" src="images/oimage.png">
+			</div>
+			<div class="box m" id="8">
+				<img class="ximage" src="images/ximage.png">
+				<img class="oimage" src="images/oimage.png">
+			</div>
+			<div class="box" id="9">
+				<img class="ximage" src="images/ximage.png">
+				<img class="oimage" src="images/oimage.png">
+			</div> 
 		</div> 
 	</div>
 	
 	<aside>
 		<div id="player-one">
 			<h2>Player 1</h2>
+			<p id="your-nameone"></p>
 		</div>
 		<div id="player-two">
 			<h2>Player 2</h2>
+			<p id="your-nametwo"></p>
 		</div>
 	</aside>
+	<div>
+		<button id="modal-button-playerone">Player One Click Here!</button>
+	</div>
+	<div id="player-one-modal">
 		
-
+		<div class="modal-content-playerone">
+			<div class="modal-header-playerone">
+				<h2>Player One</h2>
+			</div>
+			<div class="modal-body-playerone">
+				<p>Player One, Enter your name below!</p>
+				<input id="player-one-name"></input>
+				<button id="close-modal">Submit Name</button>
+			</div>
+		</div>
+	</div>
+	<div>
+		<button id="modal-button-playertwo">Player Two Click Here!</button>
+	</div>
+	<div id="player-two-modal">
+		<div class="modal-content-playertwo">
+			<div class="modal-header-playertwo">
+				<h2>Player Two</h2>
+			</div>
+			<div class="modal-body-playertwo">
+				<p>Player Two, Enter your name below!</p>
+				<input id="player-two-name"></input>
+				<button id="close-modal-playertwo">Submit Name</button>
+			</div> 
+		</div>
+	</div>
+<script src="script.js"></script>
 </body>
 </html>
