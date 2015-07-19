@@ -10,18 +10,20 @@ h3 {
 	bottom: 20%;
 /*	left: 25%;*/
 }
+
 .ximage {
 	display: none;
-height: 100px;
-width: 102px;
+	height: 100px;
+	width: 102px;
 }
 
 .oimage {
-display: none;
-position: relative;
-height: 100px;
-width: 102px;
+	display: none;
+	position: relative;
+	height: 100px;
+	width: 102px;
 }
+
 .board {
 	width: 320px;
 	height: 320px;
