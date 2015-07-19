@@ -1,10 +1,6 @@
 console.log("linked");
 
 
-
-
-
-
 //modals to collect players names:
 var namePlayerOne = function namePlayerOne () {
 var playerOneButton = $('#modal-button-playerone');
@@ -20,10 +16,10 @@ submitButton.on('click', function(){
 	playerOneModal.toggle();
 	playerOneButton.toggle();
 	var grabName = $('#player-one-name').val()
-	console.log(grabName);
     $('#your-nameone').append(grabName);
+    return grabName;
     });
-
+	
 }
 
 
@@ -42,7 +38,7 @@ closeButton.on('click', function(){
 	playerTwoButton.toggle();
 	var grabSecondName = $('#player-two-name').val();
 	$('#your-nametwo').append(grabSecondName);
-	
+	return grabSecondName;
 	});
 }
 
@@ -82,6 +78,8 @@ var winners = [[0,1,2], [3,4,5], [6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]
 
 var boxArray = [];
 var boxDivs = $('.box');
+var xarray = [];
+var oarray = [];
 
 
 for(var i = 0; i < boxDivs.length; i++){
@@ -92,6 +90,32 @@ for(var i = 0; i < boxDivs.length; i++){
 	console.log(i);
 }
 
+var makeArrayPlayerX = function makeArrayPlayerX () {
+	$('.box').on('click', function (){
+		if ($(this).children('.ximage').is(':visible')){
+		var xindex = $('.box').index($(this));
+			xarray.push(xindex);
+			console.log(xarray);
+		}
+	});
+}
+
+var makeArrayPlayerO = function makeArrayPlayerO () {
+	$('.box').on('click', function (){
+		if ($(this).children('.oimage').is(':visible')){
+			var oindex = $('.box').index($(this));
+			oarray.push(oindex);
+			console.log(oarray);
+		}
+
+	});
+}
+
+var checkWinner = function checkWinner () {
+	if (xarray === winners) {
+		alert("Player one wins");
+	}
+}
 // var restartGame = function restartGame () {
 // 	$('#start').on('click', function(){
 // 		startGame();
@@ -105,5 +129,7 @@ $("#start").on("click", function(){
 });
 
 startGame();
+makeArrayPlayerO();
+makeArrayPlayerX();
 
 
