@@ -2,7 +2,7 @@ console.log("linked");
 
 
 //modals to collect players names:
-var namePlayerOne = function namePlayerOne () {
+var namePlayerOne = function namePlayerOne() {
 var playerOneButton = $('#modal-button-playerone');
 var playerOneModal = $('#player-one-modal');
 var submitButton = $('#close-modal');
@@ -15,7 +15,7 @@ playerOneButton.on('click', function(){
 submitButton.on('click', function(){
 	playerOneModal.toggle();
 	playerOneButton.toggle();
-	var grabName = $('#player-one-name').val()
+	grabName = $('#player-one-name').val()
     $('#your-nameone').append(grabName);
     return grabName;
     });
@@ -23,7 +23,7 @@ submitButton.on('click', function(){
 }
 
 
-var namePlayerTwo = function namePlayerTwo() {
+var namePlayerTwo = function namePlayerTwo(){
 var playerTwoButton = $('#modal-button-playertwo');
 var playerTwoModal = $('#player-two-modal');
 var closeButton = $('#close-modal-playertwo');
@@ -36,15 +36,14 @@ playerTwoButton.on('click', function(){
 closeButton.on('click', function(){
 	playerTwoModal.toggle();
 	playerTwoButton.toggle();
-	var grabSecondName = $('#player-two-name').val();
+	grabSecondName = $('#player-two-name').val();
 	$('#your-nametwo').append(grabSecondName);
 	return grabSecondName;
 	});
 }
 
 var startGame = function startGame () {
-	namePlayerOne();
-	namePlayerTwo();
+
 	playerMove();
 
 } 
@@ -82,6 +81,7 @@ var xarray = [];
 var oarray = [];
 
 
+
 for(var i = 0; i < boxDivs.length; i++){
 	console.log(boxDivs[i]);
 	var boardDivs = boxDivs[i];
@@ -113,12 +113,13 @@ var makeArrayPlayerO = function makeArrayPlayerO () {
 	});
 }
 
-var checkWinner = function checkWinner () {
+var checkWinner = function checkWinner (namePlayerOne) {
 	for (var i = 0; i < winners.length; i++) {
 		var winningArrays = winners[i];
 		if (xarray.sort().toString() === winningArrays.toString()){
 			console.log("player one wins");
-			alert("Congratulations,  you, win!");
+			
+			alert("Congratulations, " + grabName + ", you win!");
 		} 
 	}
 }
@@ -129,7 +130,9 @@ var checkOWinner = function checkOWinner () {
 		var winningArrays = winners[i];
 		if (oarray.sort().toString() === winningArrays.toString()) {
 			console.log("player two wins");
-		}
+			alert("Congratulations, " + grabSecondName + ", you win!");
+			
+		}	
 	}
 }
 
@@ -140,6 +143,9 @@ $("#start").on("click", function(){
 });
 
 startGame();
+namePlayerOne();
+namePlayerTwo();
+
 makeArrayPlayerO();
 makeArrayPlayerX();
 
