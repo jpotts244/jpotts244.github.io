@@ -96,6 +96,7 @@ var makeArrayPlayerX = function makeArrayPlayerX () {
 		var xindex = $('.box').index($(this));
 			xarray.push(xindex);
 			console.log(xarray);
+			checkWinner();
 		}
 	});
 }
@@ -106,23 +107,33 @@ var makeArrayPlayerO = function makeArrayPlayerO () {
 			var oindex = $('.box').index($(this));
 			oarray.push(oindex);
 			console.log(oarray);
+			checkOWinner();
 		}
 
 	});
 }
 
 var checkWinner = function checkWinner () {
-	if (xarray === winners) {
-		alert("Player one wins");
+	for (var i = 0; i < winners.length; i++) {
+		var winningArrays = winners[i];
+		if (xarray.sort().toString() === winningArrays.toString()){
+			console.log("player one wins");
+			alert("Congratulations,  you, win!");
+		} 
 	}
 }
-// var restartGame = function restartGame () {
-// 	$('#start').on('click', function(){
-// 		startGame();
-// 	});
-	
 
-// } 
+
+var checkOWinner = function checkOWinner () {
+	for (var i = 0; i < winners.length; i++) {
+		var winningArrays = winners[i];
+		if (oarray.sort().toString() === winningArrays.toString()) {
+			console.log("player two wins");
+		}
+	}
+}
+
+
 
 $("#start").on("click", function(){
 	location.reload();
