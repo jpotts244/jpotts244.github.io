@@ -48,6 +48,12 @@ h3 {
 	border-bottom: 1px
 }
 
+#game-start {
+	position: relative;
+	left: 415px;
+	top: 90px;
+}
+
 #start {
 	position: relative;
 	left: 250px;
@@ -60,6 +66,8 @@ h3 {
 	bottom: 62%;
 	font-family: tahoma;
 	margin-bottom: 0px;
+	display: none;
+	
 }
 
 #player-two {
@@ -67,6 +75,8 @@ h3 {
 	left: 76%;
 	bottom: 62%;
 	font-family: tahoma;
+	display: none;
+	
 
 }
 
@@ -137,6 +147,7 @@ h3 {
 	background-color: white;
 	top: 100px;
 	width: 40%;
+	
 
 }
 
@@ -145,6 +156,7 @@ h3 {
 	background-color: white;
 	width: 68%;
 	padding: 5px;
+	
 }
 
 .modal-body-playertwo {

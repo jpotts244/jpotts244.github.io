@@ -3,7 +3,7 @@ console.log("linked");
 
 //modals to collect players names:
 var namePlayerOne = function namePlayerOne() {
-var playerOneButton = $('#modal-button-playerone');
+var playerOneButton = $('#game-start');
 var playerOneModal = $('#player-one-modal');
 var submitButton = $('#close-modal');
 
@@ -17,6 +17,7 @@ submitButton.on('click', function(){
 	playerOneButton.toggle();
 	grabName = $('#player-one-name').val()
     $('#your-nameone').append(grabName);
+    $('#player-one').show();
     return grabName;
     });
 	
@@ -24,7 +25,7 @@ submitButton.on('click', function(){
 
 
 var namePlayerTwo = function namePlayerTwo(){
-var playerTwoButton = $('#modal-button-playertwo');
+var playerTwoButton = $('#close-modal');
 var playerTwoModal = $('#player-two-modal');
 var closeButton = $('#close-modal-playertwo');
 
@@ -38,13 +39,14 @@ closeButton.on('click', function(){
 	playerTwoButton.toggle();
 	grabSecondName = $('#player-two-name').val();
 	$('#your-nametwo').append(grabSecondName);
+	$('#player-two').show();
 	return grabSecondName;
 	});
 }
 
 var startGame = function startGame () {
 	playerMove();
-	alert("Click Add Name to begin!");
+
 
 } 
 
