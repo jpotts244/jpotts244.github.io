@@ -46,6 +46,8 @@ closeButton.on('click', function(){
 
 var startGame = function startGame () {
 	playerMove();
+	namePlayerOne();
+	namePlayerTwo();
 
 
 } 
@@ -77,10 +79,11 @@ var playerMove = function playerMove (){
 var winners = [[0,1,2], [3,4,5], [6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
 
 
-var boxArray = [];
-var boxDivs = $('.box');
+// var boxArray = [];
+// var boxDivs = $('.box');
 var xarray = [];
 var oarray = [];
+
 
 
 
@@ -117,27 +120,50 @@ var makeArrayPlayerO = function makeArrayPlayerO () {
 	}
 
 
-var checkWinner = function checkWinner (namePlayerOne) {
+var checkWinner = function checkWinner () {
 	for (var i = 0; i < winners.length; i++) {
-		var winningArrays = winners[i];
-		if (xarray.sort().toString() === winningArrays.toString()){
-			console.log("player one wins");
-			alert("Congratulations, " + grabName + ", you win!");
-			location.reload();
-		} 
+			
+		if (xarray.indexOf(winners[i][0]) !== -1 && xarray.indexOf(winners[i][1]) !== -1 && xarray.indexOf(winners[i][2]) !== -1) {
+
+			console.log("true");
+			alert("Congratulations, " + grabSecondName + ", you win!");
+			return true;
+		} else{
+			console.log(false);
+		
+		}
+
 	}
 }
 
 
+
+
+// var checwinner = function checkWinner() {
+	// for (var i = 0; i < winners.length; i++) {
+	// 	var winningArrays = winners[i];
+	// 	console.log(winningArrays);
+	// 	if (xarray.sort().toString() === winningArrays.toString()){
+	// 		console.log("player one wins");
+	// 		alert("Congratulations, " + grabName + ", you win!");
+	// 		location.reload();
+	// 	} 
+	// }
+	// }
+
+
 var checkOWinner = function checkOWinner () {
 	for (var i = 0; i < winners.length; i++) {
-		var winningArrays = winners[i];
-		if (oarray.sort().toString() === winningArrays.toString()) {
-			console.log("player two wins");
+		if (oarray.indexOf(winners[i][0]) !== -1 && oarray.indexOf(winners[i][1]) !== -1 && oarray.indexOf(winners[i][2]) !== -1) {
+
+			console.log("true");
 			alert("Congratulations, " + grabSecondName + ", you win!");
-			location.reload();
-		} 
+			return true;
+		} else {
+			console.log("false");
+		}
 			
+
 	}
 }
 
@@ -149,8 +175,7 @@ $("#start").on("click", function(){
 });
 
 startGame();
-namePlayerOne();
-namePlayerTwo();
+
 
 makeArrayPlayerO();
 makeArrayPlayerX();
