@@ -43,8 +43,8 @@ closeButton.on('click', function(){
 }
 
 var startGame = function startGame () {
-
 	playerMove();
+	alert("Click Add Name to begin!");
 
 } 
 
@@ -60,11 +60,11 @@ var playerMove = function playerMove (){
 		
 		}	else if (count % 2 !== 0){
 			$(this).children('.ximage').show();
+			$('#your-nameone').append('<h2>X</h2>');
 			count++;
-
-		
 		}	else if (count % 2 === 0) {
 			$(this).children('.oimage').show();
+			$('#your-nametwo').append('<h2>O</h2>');
 			count++;
 				
 		}	
@@ -82,13 +82,13 @@ var oarray = [];
 
 
 
-for(var i = 0; i < boxDivs.length; i++){
-	console.log(boxDivs[i]);
-	var boardDivs = boxDivs[i];
-	var superBoardDivs = $(boardDivs);
-	boxArray.push(superBoardDivs);
-	console.log(i);
-}
+// for(var i = 0; i < boxDivs.length; i++){
+// 	console.log(boxDivs[i]);
+// 	var boardDivs = boxDivs[i];
+// 	var superBoardDivs = $(boardDivs);
+// 	boxArray.push(superBoardDivs);
+// 	console.log(i);
+// }
 
 var makeArrayPlayerX = function makeArrayPlayerX () {
 	$('.box').on('click', function (){
@@ -108,18 +108,20 @@ var makeArrayPlayerO = function makeArrayPlayerO () {
 			oarray.push(oindex);
 			console.log(oarray);
 			checkOWinner();
-		}
+		} 
 
-	});
-}
+		});
+
+	}
+
 
 var checkWinner = function checkWinner (namePlayerOne) {
 	for (var i = 0; i < winners.length; i++) {
 		var winningArrays = winners[i];
 		if (xarray.sort().toString() === winningArrays.toString()){
 			console.log("player one wins");
-			
 			alert("Congratulations, " + grabName + ", you win!");
+			location.reload();
 		} 
 	}
 }
@@ -131,8 +133,9 @@ var checkOWinner = function checkOWinner () {
 		if (oarray.sort().toString() === winningArrays.toString()) {
 			console.log("player two wins");
 			alert("Congratulations, " + grabSecondName + ", you win!");
+			location.reload();
+		} 
 			
-		}	
 	}
 }
 
@@ -140,6 +143,7 @@ var checkOWinner = function checkOWinner () {
 
 $("#start").on("click", function(){
 	location.reload();
+
 });
 
 startGame();
