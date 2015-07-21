@@ -1,6 +1,9 @@
 #title {
 	text-align: center;
-	font-family: tahoma;
+}
+
+body {
+	background-color: #D0DCEB;
 }
 
 h3 {
@@ -8,28 +11,23 @@ h3 {
 	font-size: 50px;
 	position: relative;
 	bottom: 20%;
-/*	left: 25%;*/
+
 }
 
-.ximage {
+.ximage, .oimage {
+	position: absolute;
 	display: none;
-	height: 100px;
-	width: 102px;
-}
-
-.oimage {
-	display: none;
-	position: relative;
 	height: 100px;
 	width: 102px;
 }
 
 .board {
 	width: 320px;
-	height: 320px;
+	height: 322px;
 	margin-top: 100px;
 	margin-left: 250px;
 	background-color: black;
+
 }
 
 .box {
@@ -40,6 +38,7 @@ h3 {
 	margin: 1px;
 	display: inline-block;
 	background-color: blanchedalmond;
+	box-sizing: initial;
 }
 
 
@@ -49,9 +48,9 @@ h3 {
 }
 
 #game-start {
-	position: relative;
-	left: 415px;
-	top: 90px;
+	position: absolute;
+	left: 363px;
+	top: 159px;
 }
 
 #start {
@@ -63,8 +62,7 @@ h3 {
 #player-one {
 	position: absolute;
 	left: 60%;
-	bottom: 62%;
-	font-family: tahoma;
+	bottom: 64%;
 	margin-bottom: 0px;
 	display: none;
 	
@@ -73,11 +71,8 @@ h3 {
 #player-two {
 	position: absolute;
 	left: 76%;
-	bottom: 62%;
-	font-family: tahoma;
+	bottom: 64%;
 	display: none;
-	
-
 }
 
 #modal-button-playerone {
@@ -121,23 +116,22 @@ h3 {
 	top: 100px;
 	width: 40%;
 
-
 }
 
-.modal-header-playerone {
+.modal-header-playerone, .modal-header-playertwo {
 	position: absolute;
 	background-color: white;
-	width: 68%;
+	width: 70%;
 	padding: 5px;
 }
 
-.modal-body-playerone {
+.modal-body-playerone, .modal-body-playertwo {
 	position: absolute;
 	width: 70%;
 	height: 200px;
-	top: 50px;
+	top: 70px;
 	background-color: white;
-	border-top: 2px solid rebeccapurple;
+	border-top: 2px solid #000080;
 	text-align: center;
 }
 
@@ -148,25 +142,6 @@ h3 {
 	top: 100px;
 	width: 40%;
 	
-
-}
-
-.modal-header-playertwo {
-	position: absolute;
-	background-color: white;
-	width: 68%;
-	padding: 5px;
-	
-}
-
-.modal-body-playertwo {
-	position: absolute;
-	width: 70%;
-	height: 200px;
-	top: 50px;
-	background-color: white;
-	border-top: 2px solid rebeccapurple;
-	text-align: center;
 }
 
 #your-nameone {
