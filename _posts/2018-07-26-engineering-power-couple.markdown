@@ -26,6 +26,10 @@ Have I forgot to mention we are dog parents? Our proudest achievement, Molly Dog
 We try our best to have our home environment be a relaxing and low stress place with some boundaries in place to give us some mental space. Scott is a little bit more important than I as he is in a lead position, but we try to not surf our slack channels to any great extent at home. I set a stricter boundary for myself where I will only give my Slack and email a quick check at 10pm on work nights and try not to look at it any other times.  It is a work in progress and challenging at times especially since we work at a startup but we are getting better at not taking our work home with us every night.
 
 **Be Kind, Always.**
-Long story short, we always remember our relationship is what’s most important, everything else is second.  We are stronger as a team and it is important to not let differences of opinions at work get in the way of our personal life.
+Long story short, we always remember our relationship is what’s most important, everything else is second.  We are stronger as a team and it is important to not let differences of opinions at work get in the way of our personal life.  
+
+
+---  
+
 
 TLDR; Even if you’re not working with your significant other, writing good software is all about collaboration and trust. It can only be beneficial to yourself and others to practice kindness, empathy, patience, and understanding everyday. Pass it on + cheers.
