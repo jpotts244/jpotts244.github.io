@@ -4,8 +4,13 @@ title: About
 permalink: /about/
 ---
 
+![image](/assets/molly_and_me.png){:width="100px" display="block"}
+
 Hello there!
 
 My name is Jackie Potts and I am a full stack Ruby on Rails engineer from NYC. I used to be a professional orchestral cellist but I found programming to be too much fun. Now I'm doing my best to never stop learning, growing, and pairing.
 
 Outside of computering, I love to climb mountains with my dog.
+
+
+Come say hi at [jacquelinepotts.com](http://jacquelinepotts.com/) or [email](mailto:jacqueline.a.potts@gmail.com)
