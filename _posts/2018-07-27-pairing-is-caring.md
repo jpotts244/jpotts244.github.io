@@ -7,5 +7,5 @@ categories: jekyll update
 
 
 ![friends][pairing]
-
+Conducting some research, more coming soon.
 [pairing]: ../../../../../assets/fry-pairing.jpg
