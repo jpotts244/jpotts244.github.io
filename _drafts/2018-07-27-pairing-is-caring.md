@@ -30,7 +30,7 @@ But there is comfort in knowing that you have another person there by your side 
 
 
 ## Sometimes you know your pair a long, long time
-![][partner-pairing]{:width="100px" display="block"}
+![][partner-pairing]{:width="400px"height="400px"}
 Like for 10 years. This is me and my fiance Scott. He loves Ruby.
 
 ## Sometimes you just met your pair
@@ -95,7 +95,7 @@ You have taught me lessons I will hold with me for the rest of my life both as a
 [fry-pairing]: ../../../../../assets/pairing_is_caring/fry-pairing.jpg
 [bad-pairing]: ../../../../../assets/pairing_is_caring/bad_pairing.jpg
 [partner-pairing]: ../../../../../assets/pairing_is_caring/partner_pairing.png
-[woods-pairing]: ../../../../../assets/pairing_is_caring/woods_pairing.png
+[woods-pairing]: ../../../../../assets/pairing_is_caring/woods_pairing.jpg
 [local-pairing]: ../../../../../assets/pairing_is_caring/local_pairing.png
 [molly-dog]: ../../../../../assets/pairing_is_caring/molly_dog.jpg
 [molly-pairing]: ../../../../../assets/pairing_is_caring/dogs_pairing.jpg
