@@ -3,8 +3,8 @@ layout: post
 title:  "Engineering Power Couple, Tips for working with your S.O."
 date:   2018-07-26 20:25:10 -0400
 categories: jekyll update
-image: /assets/images/markdown.jpg
-headerImage: false
+image: /assets/images/scott_and_me.jpg
+headerImage: true
 tag:
 - working with your spouse
 - work life balance
