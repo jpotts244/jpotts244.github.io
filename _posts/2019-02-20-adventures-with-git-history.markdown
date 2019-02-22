@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Adventures with Git History and File Structure"
+title:  "Adventures with Git History and File Tree Structure"
 date:   2019-02-20 20:25:10 -0400
 categories: jekyll update
-image: /assets/images/scott_and_me.jpg
+image: https://imgs.xkcd.com/comics/git_commit.png
 headerImage: true
 tag:
 - git workflows
@@ -11,7 +11,7 @@ tag:
 - git history
 category: blog
 author: jacquelinepotts
-description: Using git history to take over the world
+description: Using git history and project structure to take over the world
 ---
 
 Git! It's everyone's favorite version control system and rightfully so, it is a pretty
@@ -42,6 +42,11 @@ Visit the source code to get some drop dead gorgeous flowers of your favorite pr
 
 ## Git and Developer History
 **Getting a better understanding of the who, what, where, and why of a codebase.**
+Let's take `git blame` to a whole new level with a neat little tool called [Gource](https://gource.io/), an animated source control visualization tool.
 
 
-Here we get an actual video of the history of the commits and commit authors who contributed to the project with some fun facts like when and to what magnitude of ownership.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NjUuAuBcoqs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Here we get an actual video of the history of the commits and commit authors who contributed to the project with some fun facts like when the code was written, what areas of the codebase the developer worked on, and the magnitude of their ownership.
+
+A tool like Gource is especially helpful getting a high level and quick introduction to a new code base and the developers you're about to work with.
