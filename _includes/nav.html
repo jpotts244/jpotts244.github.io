@@ -22,6 +22,14 @@
             {% endif %}
         {% endif %}
 
+        {% if site.events == true %}
+            {% if page.title != "Events" %}
+                <li class="item">
+                    <a class="link" href="{{ site.url }}/events">Events</a>
+                </li>
+            {% endif %}
+        {% endif %}
+
         {% if site.about == true %}
             {% if page.title != "About" %}
                 <li class="item">
