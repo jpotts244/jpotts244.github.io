@@ -4,7 +4,7 @@ layout: page
 ---
 ![Profile Image]({{ site.url }}/{{ site.picture }})
 
-Well, hello there!
+<h2>Well, hello there!</h2>
 My name is Jackie. I am a Ruby and Python software engineer originally from New York City, now enjoying life living in the deep woods of Colorado. Co-Creator of [Push of Love](https://pushoflove.com/), the Android and iOS app that sends you affirmations and words of love and encouragement every day, because YOU'RE GORGEOUS AND YOU DESERVE IT.
 
 Python engineer at [Peerfit](https://peerfit.com/).
