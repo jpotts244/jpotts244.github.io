@@ -7,13 +7,14 @@ layout: page
 Well, hello there!
 My name is Jackie. I am a Ruby and Python software engineer originally from New York City, now enjoying life living in the deep woods of Colorado. Co-Creator of [Push of Love](https://pushoflove.com/), the Android and iOS app that sends you affirmations and words of love and encouragement every day, because YOU'RE GORGEOUS AND YOU DESERVE IT.
 
-Python engineer at [Peerfit](https://peerfit.com/).
+Python engineer at [Peerfit](https://peerfit.com/)
 
-Mentor at [#BUILTBYGIRLS](https://www.builtbygirls.com/),
+Mentor at [#BUILTBYGIRLS](https://www.builtbygirls.com/)
 
-Ruby track mentor for [Exercism.io](https://exercism.io/).
+Ruby track mentor for [Exercism.io](https://exercism.io/)
 
-Dog Mom, avid hiker, horseback rider, and volunteer with the [Boulder Humane Society](https://www.boulderhumane.org/) and the [Colorado Horse Rescue](https://www.chr.org/).
+Dog Mom, avid hiker, horseback rider, and volunteer <br>
+with the [Boulder Humane Society](https://www.boulderhumane.org/) 🐕 and the [Colorado Horse Rescue](https://www.chr.org/) 🐴
 
 <h2>Skills</h2>
 
