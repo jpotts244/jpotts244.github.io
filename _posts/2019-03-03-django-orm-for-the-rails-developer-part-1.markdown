@@ -29,7 +29,7 @@ Let's say we want to return a single record in our database. For arguments sake,
 
 **`find`**
 
-```rconsole
+```irb
 irb(main):003:0> Post.find(1)
 
 [2019-03-04T00:01:56.094388 #4] DEBUG -- :   Post Load (1.2ms)  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2  [["id", "1"], ["LIMIT", 1]]
@@ -40,7 +40,7 @@ In the console, ActiveRecord will show us what `SQL` it has run to execute the g
 
 Now if we query for a `post` with an `id=7` that does not exist in our database, active record will let us know by alerting us with a handy `ActiveRecord::RecordNotFound` error:
 
-```rconsole
+```irb
 irb(main):003:0> Post.find(7)
 
 Post Load (0.8ms)  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2  [["id", nil], ["LIMIT", 1]]
@@ -120,7 +120,7 @@ Now, our first few examples were all fine and dandy but there will be instances 
 **Rails - Active Record**
 
 **`where`**
-```rconsole
+```irb
 irb(main):004:0> Post.where(id: 1)
 [2019-03-04T00:07:53.498783 #4] DEBUG -- :   Post Load (0.9ms)  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2  [["id", "1"], ["LIMIT", 11]]
 
@@ -130,7 +130,7 @@ irb(main):004:0> Post.where(id: 1)
 Something special to note here, take a look at the output we are getting from this query. When using the `where` clause, ActiveRecord will return an `ActiveRecord::Relation` object, which for the purposes of this blog post, is like a special Active Record array. We will need to parse the data as an array of objects always.
 
 Arrays, eh? So what happens if we write a `.where` query that returns nothing?
-```rconsole
+```irb
 irb(main):007:0> Post.where(id: 100)
 [2019-03-04T00:14:49.323594 #4] DEBUG -- :   Post Load (1.0ms)  SELECT  "posts".* FROM "posts" WHERE "posts"."id" IS NULL LIMIT $1  [["LIMIT", 11]]
 
@@ -142,7 +142,7 @@ Note we still get an `ActiveRecord::Relation` object back, but we can see here i
 
 Unlike with `.find`, using `where` means we get to query by all sorts of attributes not just `id`:
 
-```rconsole
+```irb
 irb(main):004:0> Post.where(author: "blogger-jim")
 [2019-03-04T00:07:53.498783] DEBUG -- :   Post Load (0.9ms)  SELECT  "posts".* FROM "posts" WHERE "posts"."author" = $1 LIMIT $2  [["author", "blogger-jim"], ["LIMIT", 11]]
 
