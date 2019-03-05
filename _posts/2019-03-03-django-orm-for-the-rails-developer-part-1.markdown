@@ -7,26 +7,42 @@ image: /assets/images/django-the-cat.png
 headerImage: true
 tag:
 - Django ORM
-- Python
 - Querying in a Django Project
+- Rails
+- Django
 category: blog
 author: jacquelinepotts
 ---
 
-Querying with the Django ORM: how do we do it? What journeys lie ahead of us? Which queries are more efficient and put less load on a database? Coming from an Active Record and Rails background, the transition and answers to these questions are still an ongoing journey. Below we will discuss some fun queries in Rails and how those might translate to Django; Django ORM for people who aren't familiar with the Django ORM.
+Querying with the Django ORM: how do we do it? What journeys lie ahead of us? Which queries are more efficient and put less load on a database? Coming from an ActiveRecord and Rails background, the transition and answers to these questions are still an ongoing journey. Below we will discuss some fun queries in Rails and how those might translate to Django; Django ORM for people who aren't familiar with the Django ORM. Photographed above, meet Django the cat.
+
+For the purposes of this post, let's say we are working on a blog. We will be working side by side with a Rails application with a PostgreSQL database and a Django application with a PostgreSQL database.
 
 ---
+# Entering the Console
+Before we get started we will need to enter the console of our applications
 
 
-## Querying for a Single Object
+To enter the Rails console we will be using the command
+```
+bundle exec rails console
+```
+
+To enter the Django console we will be using the command
+```
+./manage.py shell
+```
+<br>
+
+# Querying for a Single Object
 One of the cornerstones of web development is the ability to read and return data from a database.
-For the purposes of this post, let's assume we are working side by side with a Rails application with a PostgreSQL database and a Django application with a PostgreSQL database.
 
-Let's say we want to return a single record in our database. For arguments sake, let's say we are working on a blog, we want to return one `post` that has an `id=1`.
+So let's get to it, for our first task we want to return a single record in our database: we want to return one `post` that has an `id=1`.
 <br>
 <br>
-**Rails - Active Record**
 
+
+## Rails - ActiveRecord
 **`find`**
 
 ```irb
@@ -34,11 +50,12 @@ irb(main):003:0> Post.find(1)
 
 [2019-03-04T00:01:56.094388 #4] DEBUG -- :   Post Load (1.2ms)  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2  [["id", "1"], ["LIMIT", 1]]
 => <#Notification id: "1", author: blogger-jim, live_at: "2018-12-11 16:00:34", created_at: "2018-12-11 04:13:54", updated_at: "2018-12-11 16:00:34", heading: "Just a regular old blog post">
+
 ```
 
 In the console, ActiveRecord will show us what `SQL` it has run to execute the given query.
 
-Now if we query for a `post` with an `id=7` that does not exist in our database, active record will let us know by alerting us with a handy `ActiveRecord::RecordNotFound` error:
+Now if we query for a `post` with an `id=7` that does not exist in our database, ActiveRecord will let us know by alerting us with a handy `ActiveRecord::RecordNotFound` error:
 
 ```irb
 irb(main):003:0> Post.find(7)
@@ -53,8 +70,7 @@ ActiveRecord::RecordNotFound (Couldnt find Post with 'id'=7)
 Sound the alarm friends, there is no such object here!
 <br>
 <br>
-**Django ORM**
-
+## Django ORM
 **`get`**
 
 Now, let's try the same thing in our Django blog, we want to return one `post` that has an `id=1`.
@@ -113,21 +129,22 @@ DoesNotExist: Post matching query does not exist.
 
 ---
 
-## Querying for a Single Object - Without Raising Errors and Exploding Everywhere
-Now, our first few examples were all fine and dandy but there will be instances when if we don't find a record in our database we don't want an error to be raised and hault all processes.
+# Querying for a Single Object - Without Raising Errors and Exploding Everywhere
+Now, our first few examples were all fine and dandy but there will be instances when if we don't find a record in our database we don't want an exception to be raised.
 <br>
-<br>
-**Rails - Active Record**
 
+## Rails - ActiveRecord
 **`where`**
+
 ```irb
 irb(main):004:0> Post.where(id: 1)
 [2019-03-04T00:07:53.498783 #4] DEBUG -- :   Post Load (0.9ms)  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2  [["id", "1"], ["LIMIT", 11]]
 
 => <#ActiveRecord::Relation [<#Post id: 1, author: blogger-jim, live_at: "2018-12-11 16:00:34", created_at: "2018-12-11 04:13:54", updated_at: "2018-12-11 16:00:34", heading: "Just a regular old blog post">]>
+
 ```
 
-Something special to note here, take a look at the output we are getting from this query. When using the `where` clause, ActiveRecord will return an `ActiveRecord::Relation` object, which for the purposes of this blog post, is like a special Active Record array. We will need to parse the data as an array of objects always.
+Something special to note here, take a look at the output we are getting from this query. When using the `where` clause, ActiveRecord will return an `ActiveRecord::Relation` object, which for the purposes of this blog post, is like a special ActiveRecord array.
 
 Arrays, eh? So what happens if we write a `.where` query that returns nothing?
 ```irb
@@ -135,6 +152,7 @@ irb(main):007:0> Post.where(id: 100)
 [2019-03-04T00:14:49.323594 #4] DEBUG -- :   Post Load (1.0ms)  SELECT  "posts".* FROM "posts" WHERE "posts"."id" IS NULL LIMIT $1  [["LIMIT", 11]]
 
 => <#ActiveRecord::Relation []>
+
 ```
 
 Note we still get an `ActiveRecord::Relation` object back, but we can see here it returns an empty array if nothing on the database side matches this query. In our code, we will just need to handle an empty array and can skip the error parsing that the `.find` queries will get you.
@@ -147,14 +165,14 @@ irb(main):004:0> Post.where(author: "blogger-jim")
 [2019-03-04T00:07:53.498783] DEBUG -- :   Post Load (0.9ms)  SELECT  "posts".* FROM "posts" WHERE "posts"."author" = $1 LIMIT $2  [["author", "blogger-jim"], ["LIMIT", 11]]
 
 => <#ActiveRecord::Relation [<#Post id: 1, author: "blogger-jim", live_at: "2018-12-11 16:00:34", created_at: "2018-12-11 04:13:54", updated_at: "2018-12-11 16:00:34", heading: "Just Breathe">]>
+
 ```
 
-Also with `where`, we can also get back multiple objects from the database, where our `find` friend will only return a single object always.
+`where` may also return multiple objects from the database, while our find friend will only ever return a single object.
 <br>
 <br>
 
-**Django ORM**
-
+## Django ORM
 **`filter`**
 
 To mimic the behavior we get with `.where` in Rails, we can use the `.filter` function in the Django ORM.
