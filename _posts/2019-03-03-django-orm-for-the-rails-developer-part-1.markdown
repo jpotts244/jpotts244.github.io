@@ -14,7 +14,7 @@ category: blog
 author: jacquelinepotts
 ---
 
-Querying with the Django ORM: how do we do it? What journeys lie ahead of us? Which queries are more efficient and put less load on a database? Coming from an ActiveRecord and Rails background, the transition and answers to these questions are still an ongoing journey. Below we will discuss some fun queries in Rails and how those might translate to Django; Django ORM for people who aren't familiar with the Django ORM. Photographed above, meet Django the cat.
+Querying with the Django ORM: how do we do it? What journeys lie ahead of us? Which queries are more efficient and put less load on a database? Coming from an ActiveRecord and Rails background, the transition and answers to these questions are still an ongoing journey. Below we will discuss some fun queries in Rails and how those might translate to Django; Django ORM for people who aren't familiar with the Django ORM. Photographed above, meet our household's #1,  Django the cat.
 
 For the purposes of this post, let's say we are working on a blog. We will be working side by side with a Rails application with a PostgreSQL database and a Django application with a PostgreSQL database.
 
@@ -49,7 +49,7 @@ So let's get to it, for our first task we want to return a single record in our 
 irb(main):003:0> Post.find(1)
 
 [2019-03-04T00:01:56.094388 #4] DEBUG -- :   Post Load (1.2ms)  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2  [["id", "1"], ["LIMIT", 1]]
-=> <#Notification id: "1", author: blogger-jim, live_at: "2018-12-11 16:00:34", created_at: "2018-12-11 04:13:54", updated_at: "2018-12-11 16:00:34", heading: "Just a regular old blog post">
+=> <#Post id: "1", author: blogger-jim, live_at: "2018-12-11 16:00:34", created_at: "2018-12-11 04:13:54", updated_at: "2018-12-11 16:00:34", heading: "Just a regular old blog post">
 
 ```
 
