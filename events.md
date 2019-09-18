@@ -2,7 +2,7 @@
 title: Events
 layout: page
 ---
-## Upcoming Events and Speaking Engagements
+## Upcoming Conferences and Speaking Engagements
 Please reach out if we have an event in common, would love to meet and say hi!
 
 <div class="side-by-side">
