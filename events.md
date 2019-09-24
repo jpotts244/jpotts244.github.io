@@ -13,7 +13,7 @@ Please reach out if we have an event in common, would love to meet and say hi!
     Working with software can be stressful at times, but does it need to be? We as a community need to discuss the importance of balance and well-being to ensure our community is healthy, thriving, and pushing for psychological safety in our work environments.</p>
   </div>
   <div class="toright">
-    <img class="image" src="../assets/images/chiwitcon-card.png" alt="Alt Text">
+    <img class="image" src="../assets/images/chiwitcon-card.jpg" alt="Alt Text">
   </div>
 </div>
 <div class="side-by-side">
@@ -24,7 +24,7 @@ Please reach out if we have an event in common, would love to meet and say hi!
     Working with software can be stressful at times, but does it need to be? We as a community need to discuss the importance of balance and well-being to ensure our community is healthy, thriving, and pushing for psychological safety in our work environments.</p>
   </div>
   <div class="toright">
-    <img class="image" src="../assets/images/acr-card.png" alt="Alt Text">
+    <img class="image" src="../assets/images/acr-card.jpg" alt="Alt Text">
   </div>
 </div>
 <div class="side-by-side">

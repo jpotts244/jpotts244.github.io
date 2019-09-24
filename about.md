@@ -2,7 +2,7 @@
 title: About
 layout: page
 ---
-![Profile Image](../assets/images/horses.png)
+![Profile Image](../assets/images/horses.jpg)
 
 <h2>Well, hello there!</h2>
 And thanks for stopping by, friend!<br>
