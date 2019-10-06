@@ -100,4 +100,28 @@ If we wanted to get exclusively less than 5 we will do just as we did above to m
 irb(main):001:0> Post.where("likes < ?", 5)
 ```
 
-TODO ADD SQL THAT GETS CONVERTED^^
+!!!!!!!!! TODO ADD SQL THAT GETS CONVERTED^^ !!!!!!!!!
+
+
+## Did you know?
+Its time for a **did you know?** break!
+
+Rails gives us the raw SQL used to execute our queries by default. Django does not give us this information by default, we will need to ask Django nicely to show us the raw SQL that will be executed by our query using the `query` function.
+
+**Regular old Django Query**
+```python
+In [1]: from posts.models import Post
+In [2]: Post.objects.filter(likes__gte=5)
+
+Out[2]: !!!!!!!!! OUTPUT INSERT HERE!!!!!!!!!!!!
+```
+
+**Calling `.query` on a Regular old Django Query**
+```python
+In [1]: from posts.models import Post
+In [2]: Post.objects.filter(likes__gte=5).query
+
+Out[2]: !!!!!!!!! OUTPUT INSERT SQL HERE!!!!!!!!!!!!
+```
+
+Alright, now get out there and write some queries!
