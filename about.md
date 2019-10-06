@@ -5,7 +5,7 @@ layout: page
 ![Profile Image](../assets/images/horses.jpg)
 
 <h2>Well, hello there!</h2>
-And thanks for stopping by, friend!<br>
+And thanks for stopping by, friend!<br><br>
 My name is Jackie and I am a Ruby and Python software engineer originally from New York City, now enjoying life living in the deep woods of Colorado. Co-Creator of [Push of Love](https://pushoflove.com/), the Android and iOS app that sends you affirmations and words of love and encouragement every day, because YOU'RE GORGEOUS AND YOU DESERVE IT.
 
 I love creating software, writing Ruby, and humanizing tech.
@@ -51,3 +51,14 @@ I'm currently working on these fun projects:<br>
 	<li>Kubernetes</li>
 	<li>TDD and Continuous Integration</li>
 </ul>
+
+<br>
+<br>
+
+---
+
+<h2>Check out the Colorado Horse Rescue</h2>
+
+![Babies](../assets/images/babies.jpg)
+
+Learn more about horse rescue in your area and in the United States [here](https://www.chr.org/)
