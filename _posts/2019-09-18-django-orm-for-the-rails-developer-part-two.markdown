@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Django ORM for the Rails Developer Part 2"
-date:   2019-09-18 11:07:10 -0400
+date:   2019-11-16 11:07:10 -0400
 categories: jekyll update
 image: /assets/images/django-the-cat.png
 headerImage: true
@@ -28,35 +28,46 @@ First step, let's grab our most popular posts from the database; give us all the
 <br>
 <br>
 
+
 ## Rails - ActiveRecord
-```ruby
+```irb
 irb(main):001:0> Post.where("likes >= ?", 5)
+
+Post Load (1.1ms)  SELECT  "posts".* FROM "posts" WHERE (id >= 5)
+=> <ActiveRecord::Relation [<Post id: "3a260dc9-db70-4741-817b-7a69f465624f", author: "hello there", likes: 5, created_at: "2018-07-31 01:28:41", updated_at: "2018-07-31 01:30:23">]>
 ```
-TODO ADD SQL THAT GETS CONVERTED^^
+
 
 In English this translates to: 'give me all the posts that have a value of `like` that is greater than or equal to 5'.
 
 `where` can take multiple different formats of conditions and here we are using a SQL string.
+<br>
+<br>
 
+## Wait a minute
 Wait a minute, but what is this `'?'` thing doing in our SQL string? The `?` is called a placeholder and we use it as a means of protection against SQL injections. Since `where` can evaluate SQL, someone could _inject_ some harmful SQL in this function that our database could execute.
 
 For example a malicious person could inject something like
-<br>
-`Post.where("likes >= 5; DROP TABLE Users")`
-<br>
+```ruby
+Post.where("likes >= 5; DROP TABLE Users")
+```
 into our system. The placeholder allows us to protect against SQL we are not expecting.
 
+<br>
 When in doubt, when using `where` with SQL strings use a placeholder!
-
+<br>
 Thats great, now if we wanted to only get `posts` that had more than 5 likes we could edit our above query pretty easily.
 
-```ruby
+```irb
 irb(main):001:0> Post.where("likes > ?", 5)
+
+Post Load (1.1ms)  SELECT  "posts".* FROM "posts" WHERE (id > 5) LIMIT $1  [["LIMIT", 11]]
+=> <ActiveRecord::Relation [<Post id: "3a260dc9-db70-4741-817b-7a69f465624f", author: "hello there", likes: 6, created_at: "2018-07-31 01:28:41", updated_at: "2018-07-31 01:30:23">]>
 ```
+
 
 Boom!
 
-<br>
 <br>
 ## Django ORM
 Let's try and do the same thing in Django; Gimme all posts who have at least 5 likes.
@@ -84,44 +95,66 @@ Easy Peasy 💻
 <br>
 <br>
 
-If we wanted to turn this around and get our least popular blog posts how do you think we would go about doing that?
+
+---
 
 ## Rails - ActiveRecord
-```ruby
+If we wanted to turn this around and get our least popular blog posts how do you think we would go about doing that?
+
+
+```irb
 irb(main):001:0> Post.where("likes <= ?", 5)
+
+Post Load (1.1ms)  SELECT  "posts".* FROM "posts" WHERE (id <= 5)
+=> <ActiveRecord::Relation [<Post id: "3a260dc9-db70-4741-817b-7a69f465624f", author: "hello there", likes: 4, created_at: "2018-07-31 01:28:41", updated_at: "2018-07-31 01:30:23">]>
 ```
 
+Which will generate the following SQL
+```sql
+SELECT `posts`.* FROM `posts`  WHERE (`posts`.`id` <= 5)
+```
 Give us all the posts that have 5 or less likes.
 
-
+<br>
 If we wanted to get exclusively less than 5 we will do just as we did above to modify the comparator by removing the `=` from the query.
 
-```ruby
+```irb
 irb(main):001:0> Post.where("likes < ?", 5)
+
+Post Load (1.1ms)  SELECT  "posts".* FROM "posts" WHERE (id < 5)
+=> <ActiveRecord::Relation [<Post id: "3a260dc9-db70-4741-817b-7a69f465624f", author: "hello there", likes: 4, created_at: "2018-07-31 01:28:41", updated_at: "2018-07-31 01:30:23">]>
+```
+```sql
+SELECT `posts`.* FROM `posts`  WHERE (`posts`.`id` < 5)
 ```
 
-!!!!!!!!! TODO ADD SQL THAT GETS CONVERTED^^ !!!!!!!!!
-
+---
 
 ## Did you know?
 Its time for a **did you know?** break!
 
 Rails gives us the raw SQL used to execute our queries by default. Django does not give us this information by default, we will need to ask Django nicely to show us the raw SQL that will be executed by our query using the `query` function.
 
-**Regular old Django Query**
+Note this function will only work on a Django QuerySet object.
+
+<br>
+**Output of a Regular old Django Query**
 ```python
 In [1]: from posts.models import Post
 In [2]: Post.objects.filter(likes__gte=5)
 
-Out[2]: !!!!!!!!! OUTPUT INSERT HERE!!!!!!!!!!!!
+Out[2]: <QuerySet [<Post: author: bloggin_4_life, created: 2018-11-28 14:32:19.956328+00:00, updated: 2018-11-30 19:23:19.956328+00:00, likes: 7>]>
 ```
+<br>
 
-**Calling `.query` on a Regular old Django Query**
+**Print the output of `query` function on a Regular old Django QuerySet**
 ```python
 In [1]: from posts.models import Post
-In [2]: Post.objects.filter(likes__gte=5).query
+In [2]: popular_posts = Post.objects.filter(likes__gte=5)
+In [3]: print(popular_posts.query)
 
-Out[2]: !!!!!!!!! OUTPUT INSERT SQL HERE!!!!!!!!!!!!
+Out[2]: SELECT post.id, post.created, post.updated, post.author, post.likes FROM post WHERE post.likes >= 5
 ```
-
+<br>
+<br>
 Alright, now get out there and write some queries!
