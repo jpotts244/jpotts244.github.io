@@ -6,13 +6,22 @@ layout: page
 
 <h2>Well, hello there!</h2>
 And thanks for stopping by, friend!<br><br>
-My name is Jackie and I am a Ruby and Python software engineer originally from New York City, now enjoying life living in the deep woods of Colorado. Co-Creator of [Push of Love](https://pushoflove.com/), the Android and iOS app that sends you affirmations and words of love and encouragement every day, because YOU'RE GORGEOUS AND YOU DESERVE IT.
+My name is Jackie and I am a Ruby and Python software engineer originally from New York City, now enjoying life living in the deep woods of Colorado. Co-Creator of [Push of Love](https://pushoflove.com/), the [Android](https://play.google.com/store/apps/details?id=com.pushoflove.app) and [iOS app](https://apps.apple.com/us/app/push-of-love/id1418962368) that sends you affirmations and words of love and encouragement every day, because YOU'RE GORGEOUS AND YOU DESERVE IT.<br><br>
 
-I love creating software, writing Ruby, and humanizing tech.
+I love creating software, writing Ruby, and humanizing tech.<br><br>
 
-I'm currently working on these fun projects:<br>
+I've been lucky enough to work on some fun projects with some fantastic people:<br>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Python engineer at [Peerfit](https://peerfit.com/)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Senior Software Engineer at [Artsy](https://www.artsy.net/)
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Co-Founder of [Push of Love](https://pushoflove.com/)
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Former Python Engineer at [Peerfit](https://peerfit.com/)
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Former Backend Engineer at [Stash](https://www.stashinvest.com/)
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Engineering Mentor at [Peerfit](https://peerfit.com/)
@@ -61,4 +70,4 @@ I'm currently working on these fun projects:<br>
 
 ![Babies](../assets/images/babies.jpg)
 
-Learn more about horse rescue in your area and in the United States [here](https://www.chr.org/)
+Learn more and support horse rescue in your area and in the United States [here](https://www.chr.org/)
