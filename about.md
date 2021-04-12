@@ -6,9 +6,10 @@ layout: page
 
 <h2>Well, hello there!</h2>
 And thanks for stopping by, friend!<br><br>
-My name is Jackie and I am a Ruby and Python software engineer originally from New York City, now enjoying life living in the deep woods of Colorado. Co-Creator of [Push of Love](https://pushoflove.com/), the [Android](https://play.google.com/store/apps/details?id=com.pushoflove.app) and [iOS app](https://apps.apple.com/us/app/push-of-love/id1418962368) that sends you affirmations and words of love and encouragement every day, because YOU'RE GORGEOUS AND YOU DESERVE IT.<br><br>
+My name is Jackie and I am a Ruby developer originally from New York City, now enjoying life living in the deep woods of NY.
+Co-Creator of [Push of Love](https://pushoflove.com/), the [Android](https://play.google.com/store/apps/details?id=com.pushoflove.app) and [iOS app](https://apps.apple.com/us/app/push-of-love/id1418962368) that sends you affirmations and words of love and encouragement every day, because YOU'RE GORGEOUS AND YOU DESERVE IT.<br><br>
 
-I love creating software, writing Ruby, and humanizing tech.<br><br>
+I love creating software, optimizing Ruby on Rails applications, and humanizing tech.<br><br>
 
 I've been lucky enough to work on some fun projects with some fantastic people:<br>
 
@@ -30,12 +31,10 @@ I've been lucky enough to work on some fun projects with some fantastic people:<
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mentor at [#BUILTBYGIRLS](https://www.builtbygirls.com/)
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ruby track mentor for [Exercism.io](https://exercism.io/)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Founder of the [Boulder Beginners Ladies Run Club](https://www.meetup.com/Boulder-Ladies-Beginner-Runners-Meetup-Group/)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ruby track mentor and contributor for [Exercism.io](https://exercism.io/)
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dog Mom, avid hiker, horseback rider, and volunteer <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dog Mom, avid hiker, horseback rider, and (former) volunteer <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with the [Colorado Horse Rescue](https://www.chr.org/) 🐴
 
 ---
@@ -45,15 +44,18 @@ I've been lucky enough to work on some fun projects with some fantastic people:<
 <ul class="skill-list">
 	<li>Ruby</li>
 	<li>Ruby on Rails</li>
+	<li>PostgreSQL</li>
+	<li>ReactJS</li>
+	<li>NodeJS</li>
+	<li>GraphQL</li>
 	<li>Python</li>
 	<li>Django</li>
 	<li>Elixr</li>
+	<li>DBT</li>
+	<li>MongoDB</li>
 	<li>Javascript</li>
-	<li>ReactJS</li>
-	<li>NodeJS</li>
 	<li>Git</li>
 	<li>Redis</li>
-	<li>PostgreSQL</li>
 	<li>MySQL</li>
 	<li>Heroku</li>
 	<li>Amazon Web Services</li>
@@ -66,8 +68,3 @@ I've been lucky enough to work on some fun projects with some fantastic people:<
 
 ---
 
-<h2>Check out the Colorado Horse Rescue</h2>
-
-![Babies](../assets/images/babies.jpg)
-
-Learn more and support horse rescue in your area and in the United States [here](https://www.chr.org/)
