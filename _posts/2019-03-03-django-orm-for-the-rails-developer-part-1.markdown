@@ -49,7 +49,7 @@ So let's get to it, for our first task we want to return a single record in our 
 irb(main):003:0> Post.find(1)
 
 [2019-03-04T00:01:56.094388 #4] DEBUG -- :   Post Load (1.2ms)  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2  [["id", "1"], ["LIMIT", 1]]
-=> <#Post id: "1", author: blogger-jim, live_at: "2018-12-11 16:00:34", created_at: "2018-12-11 04:13:54", updated_at: "2018-12-11 16:00:34", heading: "Just a regular old blog post">
+=> <#Post id: "1", author_name: "Django the Cat", live_at: "2018-12-11 16:00:34", created_at: "2018-12-11 04:13:54", updated_at: "2018-12-11 16:00:34", heading: "Just a regular old blog post">
 
 ```
 
@@ -79,7 +79,7 @@ Now, let's try the same thing in our Django blog, we want to return one `post` t
 In [1]: from posts.models import Post                                                                    
 
 In [2]: Post.objects.get(pk=1)                                                                   
-Out[2]: <Post: Post author: blogger-jim, created: 2018-11-28 14:32:19.956328+00:00>
+Out[2]: <Post: Post author_name: "Django the Cat", created: 2018-11-28 14:32:19.956328+00:00>
 ```
 Right off the bat, three things are sticking out to me in my Rails brain, we need to import models into the console?, `.objects`?, and what is a `pk`?
 
@@ -140,7 +140,7 @@ Now, our first few examples were all fine and dandy but there will be instances 
 irb(main):004:0> Post.where(id: 1)
 [2019-03-04T00:07:53.498783 #4] DEBUG -- :   Post Load (0.9ms)  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2  [["id", "1"], ["LIMIT", 11]]
 
-=> <#ActiveRecord::Relation [<#Post id: 1, author: blogger-jim, live_at: "2018-12-11 16:00:34", created_at: "2018-12-11 04:13:54", updated_at: "2018-12-11 16:00:34", heading: "Just a regular old blog post">]>
+=> <#ActiveRecord::Relation [<#Post id: 1, author_name: "Django the Cat", live_at: "2018-12-11 16:00:34", created_at: "2018-12-11 04:13:54", updated_at: "2018-12-11 16:00:34", heading: "Just a regular old blog post">]>
 
 ```
 
@@ -161,10 +161,10 @@ Note we still get an `ActiveRecord::Relation` object back, but we can see here i
 Unlike with `.find`, using `where` means we get to query by all sorts of attributes not just `id`:
 
 ```irb
-irb(main):004:0> Post.where(author: "blogger-jim")
-[2019-03-04T00:07:53.498783] DEBUG -- :   Post Load (0.9ms)  SELECT  "posts".* FROM "posts" WHERE "posts"."author" = $1 LIMIT $2  [["author", "blogger-jim"], ["LIMIT", 11]]
+irb(main):004:0> Post.where(author_name: "Django the Cat")
+[2019-03-04T00:07:53.498783] DEBUG -- :   Post Load (0.9ms)  SELECT  "posts".* FROM "posts" WHERE "posts"."author" = $1 LIMIT $2  [["author", "Django the Cat"], ["LIMIT", 11]]
 
-=> <#ActiveRecord::Relation [<#Post id: 1, author: "blogger-jim", live_at: "2018-12-11 16:00:34", created_at: "2018-12-11 04:13:54", updated_at: "2018-12-11 16:00:34", heading: "Just Breathe">]>
+=> <#ActiveRecord::Relation [<#Post id: 1, author_name: "Django the Cat", live_at: "2018-12-11 16:00:34", created_at: "2018-12-11 04:13:54", updated_at: "2018-12-11 16:00:34", heading: "Just Breathe">]>
 
 ```
 
@@ -181,7 +181,7 @@ To mimic the behavior we get with `.where` in Rails, we can use the `.filter` fu
 In [1]: from posts.models import *                                                                    
 
 In [2]: Post.objects.filter(pk=1)                                                                
-Out[2]: <QuerySet [<Post: Post author: blogger-jim, created: 2018-11-28 14:32:19.956328+00:00>]>
+Out[2]: <QuerySet [<Post: Post author_name: "Django the Cat", created: 2018-11-28 14:32:19.956328+00:00>]>
 ```
 
 Check it out! Similar to the `where` method, `filter` will return a special type of object, in Django it is called a `QuerySet` and again, for the purposes of this post, we can just treat this as an array of objects.
